@@ -1,25 +1,38 @@
 # TinderAPI for PHP
 
-Unofficial PHP library for Tinder API. 
-Full list of founded endpoints. 
-Supports basic usage for auth, pass/likes and superlikes, getting profile info.
+Неофициальная библиотека для доступа к Тиндеру по API на PHP. Пополняю по мере разбора 
+новых точек.
+Список поддерживаемых сейчас методов - ниже.
+Стандартная последовательность для получения токена:
+1. Отправка СМС
+2. Верификация СМС, получение обновляемого токена
+3. Получение токена api с помощью обновляемого токена.
+
+После получения апи токена доступны все остальные методы. 
+
+_P.S.> Простите за смесь языков и безумие в оформлении, это моя первая попытка 
+что-то в опенсорс выложить._
 
 ## Basic usage
-Basic usage example: 
+Базовый пример использования
 
 ```
 $client = new TinderAPI\Client;
-$client->setApiToken("string_api_token");
-$result = $client->like($id, $sNumber);
+$client->setApiToken("string_api_token"); //Api токен получается при авторизации
+$result = $client->like($id, $sNumber); // id - идентификатор пользователя, sNumber - внутренний рейтинг пользователя
 ```
 
 ### Endpoints without version
-| Uri  | Method |
-| :--- | :--- |
-| like/{$id}  | POST  |
-| pass/{$id}  | POST  |
-| like/{$id}/super  | POST  |
-| user/{$id}  | GET  |
+Без версии остался базовый функционал приложения - просмотр профилей, свайпы и суперлайки.
+Для каждого действия требуется основной ID пользователя.
+
+| Uri           | Method    | Status    | Comment  |
+| :---          | :---      | :---:     | :---     |
+| like/{$id}    | POST      |+          | Swipe right |
+| pass/{$id}    | POST      |+          | Swipe left |
+| like/{$id}/super| POST    |+          | Swipe up |
+| user/{$id}    | GET       |+          | Get user info |
+
 ### Endpoints v1
 ### Endpoints v2
 
