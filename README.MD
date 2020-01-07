@@ -35,6 +35,17 @@ $result = $client->like($id, $sNumber); // id - идентификатор по�
 
 ### Endpoints v1
 ### Endpoints v2
+Базовые вещи для аутентификации через СМС, работы с профилем и, собственно, получение профилей для работы
+
+| Uri           | Method    | Status    | Comment  |
+| :---          | :---      | :---:     | :---     |
+| auth/sms/send?auth_type=sms | POST | + | Send SMS to number (Post data: `{"phone_number":"70000000000"}`)|
+| auth/sms/validate?auth_type=sms | POST | + | Validate OTP code from SMS (Post data: `{"phone_number":"70000000000", "otp_code":"xxxxxx"}`) |
+| auth/login/sms | POST | + | get API token from refresh token (Post data: `{"refresh_token":"xxxxxxxxxxxx"}`)|
+| profile?include=xxx,xxx,xxx| GET | + | Get profile data (include parameters: user, likes, boost etc.)|
+| recs/core | GET | + | Get list of users |
+| fast-match/teaser | GET | - | Get likes preview (count and main image)|
+| fast-match/teasers | GET | + | Получение набора изображений пользователей, лайкнувших авторизованного|
 
 ### Endpoints v3
 ### Endpoints v4
