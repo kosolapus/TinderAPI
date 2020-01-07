@@ -3,6 +3,7 @@
 namespace TinderApi;
 
 use GuzzleHttp\Exception\ServerException;
+use stdClass;
 
 class Client implements IClient{
     public $headers = [
@@ -29,7 +30,7 @@ class Client implements IClient{
                 ]
             );
         } catch (ServerException  $exception){
-            $result = new \stdClass();
+            $result = new stdClass();
             dd($exception);
         }
 
@@ -82,13 +83,18 @@ class Client implements IClient{
 
         }
         else{
-            $result = new \stdClass();
+            $result = new stdClass();
         }
         return $result;
     }
 
     public function like($id, $sNumber){
-        $result = json_decode($this->request("like/".$id."?s_number=".$sNumber, null, "POST", null)->getBody()->getContents());
+        $result = json_decode($this->request(
+            "like/".$id."?s_number=".$sNumber,
+            null,
+            "POST",
+            null
+        )->getBody()->getContents());
         return $result;
     }
 
