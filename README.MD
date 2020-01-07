@@ -1,6 +1,5 @@
 # TinderAPI for PHP
 
-## Introducion / disclaimer
 Unofficial PHP library for Tinder API. 
 Full list of founded endpoints. 
 Supports basic usage for auth, pass/likes and superlikes, getting profile info.
