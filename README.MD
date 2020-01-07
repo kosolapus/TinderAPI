@@ -1,39 +1,25 @@
-# Tinder API for PHP (2020)
-This library implements all of founded endpoints - from login to logout.
+# TinderAPI for PHP
 
-**Important! Requires enabled http/2 module!**
+## Introducion / disclaimer
+Unofficial PHP library for Tinder API. 
+Full list of founded endpoints. 
+Supports basic usage for auth, pass/likes and superlikes, getting profile info.
 
-|||
-|:---|:---|
-| base URL | api.tinder.com |
-|API version|2|
+## Basic usage
+Basic usage example: 
 
-| path | method | data | comment | implementation |
-|:---|:---|:---|:---|:---|
-|auth/sms/send?auth_type=sms | POST | {"phone_number":"xxx"} |Отправляет СМС на указанный номер | look here |
-|auth/sms/validate?auth_type=sms | POST | {"phone_number":"xxx","otp_code":"xxxxxx", "is_update":true/false} | Верифицирует полученный номер | look here |
-|auth/login/sms|POST|{"refresh_token":"xxxxxx"}|||
-|meta|POST||||
-|fast-match/teaser|GET||||
-|recs/core|GET||||
-|profile?include=xxx,yyy|GET||||
----
-|||
-|:---|:---|
-| base URL | api.tinder.com |
-|API version|1|
+`code will be here`
 
-| path | method | data | comment | implementation |
-|:---|:---|:---|:---|:---|
-|superlikeable|GET||||
----
-|||
-|:---|:---|
-| base URL | api.tinder.com |
-|API version|none|
+## Version list
+- none
+- v1
+- v2
+- v3
+- v4
 
-| path | method | data | comment | implementation |
-|:---|:---|:---|:---|:---|
-|updates?|POST||||
-|like/_id|POST||||
-|pass/_id|GET||||
+### Endpoints without version
+### Endpoints v1
+### Endpoints v2
+### Endpoints v3
+### Endpoints v4
+## Examples
