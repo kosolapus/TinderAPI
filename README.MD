@@ -32,6 +32,7 @@ $result = $client->like($id, $sNumber); // id - идентификатор по�
 | pass/{$id}    | POST      |+          | Swipe left |
 | like/{$id}/super| POST    |+          | Swipe up |
 | user/{$id}    | GET       |+          | Get user info |
+| user/recs   | GET       |Not implemented          | Get user recommendation |
 
 ### Endpoints v1
 ### Endpoints v2
@@ -44,7 +45,7 @@ $result = $client->like($id, $sNumber); // id - идентификатор по�
 | auth/login/sms | POST | + | get API token from refresh token (Post data: `{"refresh_token":"xxxxxxxxxxxx"}`)|
 | profile?include=xxx,xxx,xxx| GET | + | Get profile data (include parameters: user, likes, boost etc.)|
 | recs/core | GET | + | Get list of users |
-| fast-match/teaser | GET | - | Get likes preview (count and main image)|
+| fast-match/teaser | GET | Not implemented  | Get likes preview (count and main image)|
 | fast-match/teasers | GET | + | Получение набора изображений пользователей, лайкнувших авторизованного|
 
 ### Endpoints v3
