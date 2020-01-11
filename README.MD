@@ -36,7 +36,8 @@ $result = $client->like($id, $sNumber); // id - идентификатор по�
 | pass/{$id}    | POST      |+          | Swipe left |
 | like/{$id}/super| POST    |+          | Swipe up |
 | user/{$id}    | GET       |+          | Get user info |
-| user/recs   | GET       |Not implemented          | Get user recommendation |
+| user/recs   | GET       | +          | Get user recommendation |
+| updates/{$listOfParams}   | GET       | Not implemented          | ??? |
 
 ### Endpoints v1
 ### Endpoints v2
@@ -51,7 +52,8 @@ $result = $client->like($id, $sNumber); // id - идентификатор по�
 | recs/core | GET | + | Get list of users |
 | fast-match/teaser | GET | Not implemented  | Get likes preview (count and main image)|
 | fast-match/teasers | GET | + | Получение набора изображений пользователей, лайкнувших авторизованного|
+| push/notification | PUT | Not implemented | ??? |
+| meta | POST | Not implemented | ??? |
+| buckets | POST | Not implemented | ??? |
 
-### Endpoints v3
-### Endpoints v4
 ## Examples

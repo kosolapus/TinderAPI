@@ -99,32 +99,71 @@ class Client implements IClient{
     }
 
     public function superLike($id, $sNumber){
-        $result = json_decode($this->request("like/".$id."/super?s_number=".$sNumber, null, "POST", null)->getBody()->getContents());
+        $result = json_decode($this->request(
+            "like/".$id."/super?s_number=".$sNumber,
+            null,
+            "POST",
+            null
+        )->getBody()->getContents());
         return $result;
     }
 
     public function pass($id, $sNumber){
-        $result = json_decode($this->request("pass/".$id."?s_number=".$sNumber, null, "POST", null)->getBody()->getContents());
+        $result = json_decode($this->request(
+            "pass/".$id."?s_number=".$sNumber,
+            null, "POST",
+            null
+        )->getBody()->getContents());
         return $result;
     }
 
     public function getTeasers(){
-        $result = json_decode($this->request("fast-match/teasers", "v2", "GET", null)->getBody()->getContents());
+        $result = json_decode($this->request(
+            "fast-match/teasers",
+            "v2",
+            "GET",
+            null
+        )->getBody()->getContents());
         return $result;
     }
 
     public function getProfile($includes){
-        $result = json_decode($this->request("profile?include=".join(",", $includes), "v2", "GET", null)->getBody()->getContents());
+        $result = json_decode($this->request(
+            "profile?include=".join(",", $includes),
+            "v2",
+            "GET",
+            null
+        )->getBody()->getContents());
         return $result;
     }
 
     public function matches(){
-        $result = json_decode($this->request("recs/core?limit=100", "v2", "GET", null)->getBody()->getContents());
+        $result = json_decode($this->request(
+            "recs/core",
+            "v2",
+            "GET",
+            null
+        )->getBody()->getContents());
+        return $result;
+    }
+
+    public function matchesOld(){
+        $result = json_decode($this->request(
+            "user/recs",
+            null,
+            "GET",
+            null
+        )->getBody()->getContents());
         return $result;
     }
 
     public function getUserInfo($id){
-        $result = json_decode($this->request("user/".$id, null, "GET", null)->getBody()->getContents());
+        $result = json_decode($this->request(
+            "user/".$id,
+            null,
+            "GET",
+            null
+        )->getBody()->getContents());
         return $result;
     }
 
