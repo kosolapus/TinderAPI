@@ -38,7 +38,7 @@ $apiToken = $result->data->api_token; //this token you should use for subscribe 
 Шаг 3. Допустим, лайк
 ```php
 $client = new TinderAPI\Client;
-$client->setApiToken($apiToken"); //Api Token from step 2
+$client->setApiToken($apiToken); //Api Token from step 2
 $result = $client->like($id, $sNumber); // id - идентификатор пользователя, sNumber - внутренний рейтинг пользователя
 ```
 
