@@ -18,11 +18,27 @@ _P.S.> Простите за смесь языков и безумие в офо
 что-то в опенсорс выложить._
 
 ## Basic usage
-Базовый пример использования
+Базовый пример использования (авторизация + лайк)
 
+1 шаг. Авторизация через СМС
+```php
+$client = new Client;
+$phone = "xxxxxxxxxxx"; //your phone number without lead "+"
+$client->sendSms($phone);
 ```
+
+2 шаг. После получения СМС его надо подтвердить
+```php
+$client = new Client;
+$phone = "xxxxxxxxxxx"; //your phone number without lead "+"
+$otpCode = "xxxxxx"; //message from SMS
+$result = $client->loginBySms($phone, $otpCode); 
+$apiToken = $result->data->api_token; //this token you should use for subscribe every request
+```
+Шаг 3. Допустим, лайк
+```php
 $client = new TinderAPI\Client;
-$client->setApiToken("string_api_token"); //Api токен получается при авторизации
+$client->setApiToken($apiToken"); //Api Token from step 2
 $result = $client->like($id, $sNumber); // id - идентификатор пользователя, sNumber - внутренний рейтинг пользователя
 ```
 
@@ -39,7 +55,6 @@ $result = $client->like($id, $sNumber); // id - идентификатор по�
 | user/recs   | GET       | +          | Get user recommendation |
 | updates/{$listOfParams}   | GET       | Not implemented          | ??? |
 
-### Endpoints v1
 ### Endpoints v2
 Базовые вещи для аутентификации через СМС, работы с профилем и, собственно, получение профилей для работы
 
