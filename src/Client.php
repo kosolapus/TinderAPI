@@ -8,7 +8,7 @@ use stdClass;
 class Client implements IClient{
     public $headers = [
         "User-Agent"=>"Tinder Android Version 11.6.0",
-        "tinder-version" => "11.6.0",
+        "tinder-version" => "2.51.0",
         "platform" => "android",
         "Host" => "api.gotinder.com"
         ];
@@ -24,7 +24,7 @@ class Client implements IClient{
                 $method,
                 $fullUrl,
                 [
-                    "version" => 2.0,
+                    "version" => 3.0,
                     "headers" => $this->headers,
                     "json" => $requestBody
                 ]

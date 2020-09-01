@@ -1,7 +1,7 @@
 {
   "name": "kosolapus/tinder-api",
   "description": "Tinder-api",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "library",
   "autoload": {
     "psr-4": {
@@ -10,7 +10,8 @@
   },
   "require": {
     "guzzlehttp/guzzle": "~6.0",
-    "larapack/dd": "1.*"
+    "larapack/dd": "1.*",
+    "ext-json": "*"
   },
   "require-dev": {
 

@@ -1,0 +1,71 @@
+openapi: 3.0.0
+info:
+  title: TinderAPI
+  description: |
+    Неофициальная библиотека для доступа к Тиндеру по API.
+    Пополняю по мере разбора новых точек.
+  version: 1.0.0
+servers:
+  - url: 'https://api.gotinder.com/v3/'
+
+tags:
+  - name: Auth
+    description: Auth endpoints for token request
+  - name: Actions
+    description: Base actions for user
+
+paths:
+  /auth/login:
+    post:
+      tags:
+        - Auth
+      parameters:
+        - name: locale
+          description: Language
+          in: query
+          schema:
+            type: object
+            description: Language of login
+            default:
+              locale: ru
+        - in: header
+          name: Host
+          schema:
+            type: string
+            default: api.gotinder.com
+          required: true
+        - in: header
+          name: origin
+          schema:
+            type: string
+            default: https://tinder.com
+          required: true
+        - in: header
+          name: tinder-version
+          schema:
+            type: string
+            default: 2.51.0
+          required: true
+        - in: header
+          name: user-agent
+          schema:
+            type: string
+            default: Mozilla/5.0 (Linux; Android 9; SAMSUNG SM-J730FM) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/12.1 Chrome/79.0.3945.136 Mobile Safari/537.36
+          required: true
+      description: Login SMS request
+      summary: Login SMS request
+      requestBody:
+        description: None
+        required: true
+        content:
+          application/x-google-protobuf:
+            schema:
+              type: string
+              example: "79019931763"
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: string
